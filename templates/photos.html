@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Photos</title>
+        <style>
+            body {
+                background-color: azure;
+                font-family:'Courier New', Courier, monospace;
+                letter-spacing: 2px;
+            }
+            h1 {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                padding: 50px;
+                border: 3px solid black;
+                background-color: bisque;
+                font-family:'Courier New', Courier, monospace;
+                letter-spacing: 2px;
+                font-weight: normal;
+            }
+            img {
+                border: 2px dashed black;
+            }
+        </style>
+    </head>
+    <body>
+        <center><h1>Photos</h1></center>
+        <center><form action="/">
+            <input type="submit" name="back" id="back" value="Main Page">
+        </form></center><br>
+        {% for photo in photos %}
+        <center><img src="{{url_for('static', filename=photo)}}" alt="{{photo}}"></center>
+        <center><figcaption>{{photo}}</figcaption></center><br>
+        {% endfor %}
+    </body>
+</html>
